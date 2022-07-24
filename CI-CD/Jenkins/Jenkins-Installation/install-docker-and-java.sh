@@ -19,5 +19,5 @@ echo \
 
 apt update
 
-apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin -y
+apt install docker-ce docker-ce-cli containerd.io docker-compose-plugin openjdk-11-jdk -y
 

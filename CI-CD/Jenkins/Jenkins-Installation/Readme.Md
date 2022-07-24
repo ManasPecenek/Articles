@@ -11,7 +11,7 @@ git clone --depth=1 https://github.com/ManasPecenek/Articles.git
 
 cd Articles/CI-CD/Jenkins/Jenkins-Installation
 
-sudo bash install-docker.sh
+sudo bash install-docker-and-java
 ````
 
 
@@ -75,5 +75,29 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 * You can notice that the security issue notification is gone now.
 
 # 5) Add the Ubuntu Server as a Slave Node
+
+* Again go to `Manage Jenkins` and then `Manage Nodes and Clouds` section. Clisk on `New Node`
+
+* Create a Slave-Agent configured as a `Permanent Agent`
+
+    * `Number of Executors` should be equal to Number of cores you have. In my case it is 4. But you can manage it based on your build later on.
+
+    * Select a `Remote root Directory` that will be created in the Agent
+
+    * Choose some `Labels` for this agent that you can specify later on during pipelines. This also helps you group some agents together for various purposes
+
+    * For `Usage`, select the one that fits you the best
+
+    * For `Launch Method` select `via SSH`
+
+    * Fill in the `Host` section with the IP of UBUNTU SERVER
+
+    * For `Credentials`, add username and password of the UBUNTU SERVER
+
+    * For `Host Key Verification Strategy` select `Non verifying Verification Strategy`for simplicity
+
+
+
+
 
 
