@@ -25,9 +25,7 @@ docker run -d --name jenkins-master --hostname jenkins-master --net jenkins -v j
 
 # 3) Login to Jenkins
 
-* Go to http://IP-OF-UBUNTU-SERVER:8080
-
-* Run `docker logs jenkins-master` and then look for the Admin Password. It will be something like:
+* Run `docker logs jenkins-master` in the Ubuntu Server and then look for the Admin Password. It will be something like:
 
 ````
 *************************************************************
@@ -46,7 +44,7 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 *************************************************************
 ````
 
-* Then paste it in the Dashboard
+* Now go to http://IP-OF-UBUNTU-SERVER:8080 then paste the password in the Dashboard
 
 <details><summary>See the Screenshot</summary>
 <p>
