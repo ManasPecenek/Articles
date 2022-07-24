@@ -25,7 +25,7 @@ docker run -d --name jenkins-master --hostname jenkins-master --net jenkins -v j
 
 # 3) Login to Jenkins via http://IP-OF-UBUNTU-SERVER:8080
 
-* Run `docker logs jenkins-master`and the look for the Admin Password. It will be something like:
+* Run `docker logs jenkins-master` and then look for the Admin Password. It will be something like:
 
 ````
 *************************************************************
@@ -48,6 +48,20 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
 * Install Suggested Plugins
 
+* Configure a new username and password
+
+* Set the master agent URL, in our case the Ubuntu Server IP
+
+# 4) Make the Jenkins Secure
+
+* Go to `Manage Jenkins` and then `Manage Nodes and Clouds` section
+
+* Click on the `Built-In-Node` then `Configure`
+
+* And then configure it as such
+
+* You can notice that the security issue notification is gone now.
+
+# 5) Add the Ubuntu Server as a Slave Node
 
 
-# 4) 
