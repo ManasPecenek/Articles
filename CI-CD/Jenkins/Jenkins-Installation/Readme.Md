@@ -11,7 +11,7 @@ git clone --depth=1 https://github.com/ManasPecenek/Articles.git
 
 cd Articles/CI-CD/Jenkins/Jenkins-Installation
 
-sudo bash install-docker-and-java
+sudo bash install-docker-and-java.sh
 ````
 
 
