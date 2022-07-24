@@ -96,6 +96,15 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
     * For `Host Key Verification Strategy` select `Non verifying Verification Strategy`for simplicity
 
+<img width="1728" alt="Screen Shot 2022-07-24 at 11 33 20" src="https://user-images.githubusercontent.com/61777390/180639290-c4c0bca4-16f4-469c-9568-ec1ad720ed7a.png">
+
+<img width="1288" alt="Screen Shot 2022-07-24 at 11 29 09" src="https://user-images.githubusercontent.com/61777390/180639302-d6a8026b-d227-4b4f-8571-fcb2211a7d65.png">
+
+<img width="1728" alt="Screen Shot 2022-07-24 at 11 33 28" src="https://user-images.githubusercontent.com/61777390/180639309-6ffb9f23-c026-4b1d-a973-e92f8ffdc388.png">
+
+
+
+
 
 
 
