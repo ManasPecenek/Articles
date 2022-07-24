@@ -4,7 +4,7 @@ In this article I will install Jenkins on Ubuntu 22.04 via Docker. The Docker co
 
 I will be using __Linode__ for hosting the Ubuntu Server. The VM I will use has 8 GB Memory,4 CPUs, and 160 GB storage.
 
-# 1) Install Docker
+# 1) Install Docker and Java
 
 ````
 git clone --depth=1 https://github.com/ManasPecenek/Articles.git
@@ -15,7 +15,7 @@ sudo bash install-docker-and-java.sh
 ````
 
 
-# 2) Create the Master Jenkins Agent
+# 2) Create the Master Agent
 
 ````
 docker network create jenkins
@@ -75,7 +75,7 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
 * You can notice that the security issue notification is gone now.
 
-# 5) Add the Ubuntu Server as a Slave Node
+# 5) Add the Ubuntu Server as a Slave Agent
 
 * Again go to `Manage Jenkins` and then `Manage Nodes and Clouds` section. Clisk on `New Node`
 
