@@ -21,6 +21,7 @@ sudo bash install-docker-and-java
 docker network create jenkins
 
 docker run -d --name jenkins-master --hostname jenkins-master --net jenkins -v jenkins_home:/var/jenkins_home -p 8080:8080 -p 50000:50000 jenkins/jenkins:lts-jdk11
+
 ````
 
 # 3) Login to Jenkins via http://IP-OF-UBUNTU-SERVER:8080
