@@ -45,7 +45,9 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 ````
 
 * Then paste it in the Dashboard
+
 -----
+
 <details><summary>Admin Password</summary>
 <p>
 
@@ -53,6 +55,7 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
 </p>
 </details>
+
 ------
 
 * Install Suggested Plugins
