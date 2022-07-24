@@ -14,7 +14,6 @@ cd Articles/CI-CD/Jenkins/Jenkins-Installation
 sudo bash install-docker-and-java.sh
 ````
 
-
 # 2) Create the Master Agent
 
 ````
@@ -61,7 +60,6 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
 <img width="986" alt="Screen Shot 2022-07-24 at 11 05 35" src="https://user-images.githubusercontent.com/61777390/180638401-3d8cf5bb-d985-43a4-be89-a450f14fe906.png">
 
-
 # 4) Make Jenkins Secure
 
 * Go to `Manage Jenkins` and then `Manage Nodes and Clouds` section
@@ -97,7 +95,16 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
     * For `Host Key Verification Strategy` select `Non verifying Verification Strategy`for simplicity
 
+
+<details><summary>Screenshot</summary>
+<p>
+
 <img width="1728" alt="Screen Shot 2022-07-24 at 11 33 20" src="https://user-images.githubusercontent.com/61777390/180639290-c4c0bca4-16f4-469c-9568-ec1ad720ed7a.png">
+
+</p>
+</details>
+
+
 
 <img width="1288" alt="Screen Shot 2022-07-24 at 11 29 09" src="https://user-images.githubusercontent.com/61777390/180639302-d6a8026b-d227-4b4f-8571-fcb2211a7d65.png">
 
