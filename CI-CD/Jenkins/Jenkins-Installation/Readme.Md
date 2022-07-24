@@ -81,7 +81,7 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
 * Create a Slave-Agent configured as a `Permanent Agent`
 
-    * `Number of Executors` should be equal to Number of cores you have. In my case it is 4. But you can manage it based on your build later on.
+    * `Number of Executors` should be equal to Number of cores you have. In my case it is 4. But you can manage it based on your builds later on.
 
     * Select a `Remote root Directory` that will be created in the Agent
 
