@@ -62,7 +62,7 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 <img width="986" alt="Screen Shot 2022-07-24 at 11 05 35" src="https://user-images.githubusercontent.com/61777390/180638401-3d8cf5bb-d985-43a4-be89-a450f14fe906.png">
 
 
-# 4) Make the Jenkins Secure
+# 4) Make Jenkins Secure
 
 * Go to `Manage Jenkins` and then `Manage Nodes and Clouds` section
 
