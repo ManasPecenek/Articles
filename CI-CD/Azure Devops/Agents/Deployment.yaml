@@ -20,7 +20,7 @@ spec:
       containers:
         - name: agent-container
           command: ["./start.sh", "/usr/local/bin/mvn-entrypoint.sh"]
-          image: petschenek/ubuntu-maven:15.2
+          image: {YOUR-AGENT-IMAGE}
           securityContext:
             allowPrivilegeEscalation: false
             runAsUser: 0
