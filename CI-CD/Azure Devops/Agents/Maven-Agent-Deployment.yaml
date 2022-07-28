@@ -14,16 +14,12 @@ spec:
       labels:
         app: azure-devops-agent
     spec:
-      volumes:
-        - name: docker-volume
-          emptyDir: {}
       containers:
         - name: agent-container
           command: ["./start.sh", "/usr/local/bin/mvn-entrypoint.sh"]
           image: {YOUR-AGENT-IMAGE}
           securityContext:
             allowPrivilegeEscalation: false
-            runAsUser: 0
           env:
             - name: AZP_AGENT_NAME
               valueFrom:
@@ -44,13 +40,5 @@ spec:
               cpu: 500m
               memory: 2000Mi
             limits:
-              memory: 4000Mi
-          volumeMounts:
-            - name: docker-volume
-              mountPath: /var/lib/docker
-          lifecycle:
-            postStart:
-              exec:
-                command: ["/bin/bash", "-c", "service docker start"]
-          securityContext:
-            privileged: true
+              memory: 3000Mi
+

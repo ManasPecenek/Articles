@@ -11,6 +11,6 @@ docker build -t docker-agent:v1.0 -f Docker-Agent.Dockerfile .
 ### 2) Create the deployment
 
 ````
-kubectl apply -f Deployment.yaml
+kubectl apply -f Docker-Agent-Deployment.yaml
 ````
 

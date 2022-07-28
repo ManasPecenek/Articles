@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-devops-agent
+  namespace: azure-devops-agent
+  labels:
+    app: azure-devops-agent
+spec:
+  selector:
+    matchLabels:
+      app: azure-devops-agent
+  template:
+    metadata:
+      labels:
+        app: azure-devops-agent
+    spec:
+      containers:
+        - name: agent-container
+          command: ["./start.sh"]
+          image: {YOUR-AGENT-IMAGE}
+          securityContext:
+            allowPrivilegeEscalation: false
+          env:
+            - name: AZP_AGENT_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: AZP_POOL
+              value: my-agent-pool
+            - name: AZP_URL
+              value: https://{AZURE-DEVOPS-URL-OF-YOUR-ORGANIZATION}
+            - name: AZP_TOKEN
+              value: {PERSONAL-ACCESS-TOKEN}
+          resources:
+            requests:
+              cpu: 100m
+              memory: 500Mi
+            limits:
+              memory: 1000Mi
+
