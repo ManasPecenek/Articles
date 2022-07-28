@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-devops-agent
+  namespace: azure-devops-agent
+  labels:
+    app: azure-devops-agent
+spec:
+  selector:
+    matchLabels:
+      app: azure-devops-agent
+  template:
+    metadata:
+      labels:
+        app: azure-devops-agent
+    spec:
+      volumes:
+        - name: docker-volume
+          emptyDir: {}
+      containers:
+        - name: agent-container
+          command: ["./start.sh", "/usr/local/bin/mvn-entrypoint.sh"]
+          image: petschenek/ubuntu-maven:15.2
+          securityContext:
+            allowPrivilegeEscalation: false
+            runAsUser: 0
+          env:
+            - name: AZP_AGENT_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: AZP_POOL
+              value: my-agent-pool
+            - name: AZP_URL
+              value: https://{AZURE-DEVOPS-URL-OF-YOUR-ORGANIZATION}
+            - name: AZP_TOKEN
+              value: {PERSONAL-ACCESS-TOKEN}
+            - name: JAVA_HOME_8_X64
+              value: /usr/lib/jvm/java-1.8.0-openjdk-amd64
+            - name: JAVA_HOME_11_X64
+              value: /usr/lib/jvm/java-1.11.0-openjdk-amd64
+          resources:
+            requests:
+              cpu: 500m
+              memory: 2000Mi
+            limits:
+              memory: 4000Mi
+          volumeMounts:
+            - name: docker-volume
+              mountPath: /var/lib/docker
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/bash", "-c", "service docker start"]
+          securityContext:
+            privileged: true
