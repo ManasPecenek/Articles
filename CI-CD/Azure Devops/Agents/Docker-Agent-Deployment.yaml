@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: azure-devops-agent
+  namespace: azure-devops-agent
+  labels:
+    app: azure-devops-agent
+spec:
+  selector:
+    matchLabels:
+      app: azure-devops-agent
+  template:
+    metadata:
+      labels:
+        app: azure-devops-agent
+    spec:
+      volumes:
+        - name: docker-volume
+          emptyDir: {}
+      containers:
+        - name: agent-container
+          command: ["./start.sh"]
+          image: {YOUR-AGENT-IMAGE}
+          securityContext:
+            privileged: true
+            runAsUser: 0
+          env:
+            - name: AZP_AGENT_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: AZP_POOL
+              value: my-agent-pool
+            - name: AZP_URL
+              value: https://{AZURE-DEVOPS-URL-OF-YOUR-ORGANIZATION}
+            - name: AZP_TOKEN
+              value: {PERSONAL-ACCESS-TOKEN}
+          resources:
+            requests:
+              cpu: 200m
+              memory: 500Mi
+            limits:
+              memory: 1000Mi
+          volumeMounts:
+            - name: docker-volume
+              mountPath: /var/lib/docker
+          lifecycle:
+            postStart:
+              exec:
+                command: ["/bin/bash", "-c", "service docker start"]
+          securityContext:
+            privileged: true
+            runAsUser: 0
