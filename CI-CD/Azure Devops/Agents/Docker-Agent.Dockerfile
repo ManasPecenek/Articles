@@ -32,7 +32,6 @@ COPY ./start.sh .
 RUN chmod +x start.sh
 
 #INSTALL DOCKER
-
 ENV container=docker 
 
 RUN apt update && apt install ca-certificates curl gnupg lsb-release -y
