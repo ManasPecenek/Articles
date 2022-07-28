@@ -23,7 +23,7 @@ RUN apt-get update && \
 
 RUN curl -LsS https://aka.ms/InstallAzureCLIDeb | bash && rm -rf /var/lib/apt/lists/*
 
-Can be 'linux-x64', 'linux-arm64', 'linux-arm', 'rhel.6-x64'.
+# Can be 'linux-x64', 'linux-arm64', 'linux-arm', 'rhel.6-x64'.
 ENV TARGETARCH=linux-x64
 
 WORKDIR /azp
