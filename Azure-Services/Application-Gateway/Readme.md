@@ -18,7 +18,7 @@
 </p>
 </details>
 
-### 2) If you so not have a Public IP, create a new one
+### 2) If you do not have a Public IP, create a new one
 
 <details><summary>See the Screenshot</summary>
 <p>
