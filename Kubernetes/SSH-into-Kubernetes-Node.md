@@ -41,9 +41,9 @@ spec:
 
 
 ```
-kubectl debug node/mynode -it --image ubuntu -- chroot /host /bin/bash 
+kubectl debug node/workernode01 -it --image ubuntu -- chroot /host /bin/bash 
 
-root@mynode:/# 
+root@workernode01:/# 
 ```
 
 Do not forget to exit from that terminal and to delete the debug pod.
