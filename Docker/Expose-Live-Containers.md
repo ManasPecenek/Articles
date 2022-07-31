@@ -42,7 +42,7 @@ $ docker run --rm --net my_net -p 80:1234 alpine/socat tcp-listen:1234,fork,reus
 
 Now you can visit https://localhost:80
 
-### SECOND RST CASE: Container has name
+### SECOND CASE: Container has name
 
 $ docker run -it --net my_net --name my_cont mkodockx/docker-pastebin   # Forgot to expose PORT 80!
 
