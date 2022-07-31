@@ -1,5 +1,5 @@
 
-# 1)
+## 1)
 
 ```
 docker ps
@@ -12,7 +12,7 @@ this is equal to : docker run -p 8001:8000 ...
 ```
 
 
-# 2)
+## 2)
 
 While you cannot expose a new port of an existing container, you can start a new container in the same Docker network and get it to forward traffic to the original container.
 ```
@@ -24,7 +24,8 @@ $ docker run -d \
     tcp-listen:1234,fork,reuseaddr tcp-connect:<container-name>:<container-port>
 ```
 
-Demo:
+## Demo:
+
 ```
 
 ### FIRST CASE: Container has no name
