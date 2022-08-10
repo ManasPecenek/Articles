@@ -4,6 +4,8 @@ In this article I will install Jenkins on Ubuntu 22.04 via Docker. The Docker co
 
 I will be using __Linode__ for hosting the Ubuntu Server. The VM I will use has 8 GB Memory,4 CPUs, and 160 GB storage.
 
+&nbsp;
+
 # 1) Install Docker and Java
 
 ````
@@ -14,6 +16,8 @@ cd Articles/CI-CD/Jenkins/Jenkins-Installation
 sudo bash install-docker-and-java.sh
 ````
 
+&nbsp;
+
 # 2) Create the Master Agent
 
 ````
@@ -23,9 +27,11 @@ docker run -d --name jenkins-master --hostname jenkins-master --net jenkins -v j
 
 ````
 
+&nbsp;
+
 # 3) Login to Jenkins
 
-* Run `docker logs jenkins-master` in the Ubuntu Server and then look for the Admin Password. It will be something like:
+***Run `docker logs jenkins-master` in the Ubuntu Server and then look for the Admin Password. It will be something like:***
 
 ````
 *************************************************************
@@ -44,7 +50,9 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 *************************************************************
 ````
 
-* Now go to http://IP-OF-UBUNTU-SERVER:8080 then paste the password in the Dashboard
+&nbsp;
+
+***Now go to http://IP-OF-UBUNTU-SERVER:8080 then paste the password in the Dashboard***
 
 <details><summary>See the Screenshot</summary>
 <p>
@@ -54,9 +62,13 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 </p>
 </details>
 
-* Install Suggested Plugins
+&nbsp;
 
-* Configure a new username and password
+***Install Suggested Plugins***
+
+&nbsp;
+
+***Configure a new username and password***
 
 <details><summary>See the Screenshot</summary>
 <p>
@@ -66,8 +78,9 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 </p>
 </details>
 
+&nbsp;
 
-* Set the master agent URL, in our case the Ubuntu Server IP
+***Set the master agent URL, in our case the Ubuntu Server IP***
 
 <details><summary>See the Screenshot</summary>
 <p>
@@ -77,13 +90,19 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 </p>
 </details>
 
+&nbsp;
+
 # 4) Make Jenkins Secure
 
-* Go to `Manage Jenkins` and then `Manage Nodes and Clouds` section
+***Go to `Manage Jenkins` and then `Manage Nodes and Clouds` section***
 
-* Click on the `Built-In-Node` then `Configure`
+&nbsp;
 
-* And then configure it as such
+***Click on the `Built-In-Node` then `Configure`***
+
+&nbsp;
+
+***And then configure it as such***
 
 <details><summary>See the Screenshot</summary>
 <p>
@@ -93,30 +112,37 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 </p>
 </details>
 
-* You can notice that the security issue notification is gone now.
+&nbsp;
+
+***You can notice that the security issue notification is gone now.**
+
+&nbsp;
 
 # 5) Add the Ubuntu Server as a Slave Agent
 
-* Again go to `Manage Jenkins` and then `Manage Nodes and Clouds` section. Clisk on `New Node`
+***Again go to `Manage Jenkins` and then `Manage Nodes and Clouds` section. Clisk on `New Node`***
 
-* Create a Slave-Agent configured as a `Permanent Agent`
+&nbsp;
 
-    * `Number of Executors` should be equal to Number of cores you have. In my case it is 4. But you can manage it based on your builds later on.
+***Create a Slave-Agent configured as a `Permanent Agent`***
 
-    * Select a `Remote root Directory` that will be created in the Agent
+* `Number of Executors` should be equal to Number of cores you have. In my case it is 4. But you can manage it based on your builds later on.
 
-    * Choose some `Labels` for this agent that you can specify later on during pipelines. This also helps you group some agents together for various purposes
+* Select a `Remote root Directory` that will be created in the Agent
 
-    * For `Usage`, select the one that fits you the best
+* Choose some `Labels` for this agent that you can specify later on during pipelines. This also helps you group some agents together for various purposes
 
-    * For `Launch Method` select `via SSH`
+* For `Usage`, select the one that fits you the best
 
-    * Fill in the `Host` section with the IP of UBUNTU SERVER
+* For `Launch Method` select `via SSH`
 
-    * For `Credentials`, add username and password of the UBUNTU SERVER
+* Fill in the `Host` section with the IP of UBUNTU SERVER
 
-    * For `Host Key Verification Strategy` select `Non verifying Verification Strategy`for simplicity
+* For `Credentials`, add username and password of the UBUNTU SERVER
 
+* For `Host Key Verification Strategy` select `Non verifying Verification Strategy`for simplicity
+
+&nbsp;
 
 <details><summary>Slave Agent Configuration 1</summary>
 <p>
@@ -126,6 +152,8 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 </p>
 </details>
 
+&nbsp;
+
 <details><summary>Adding SSH Credentials for Slave Agent</summary>
 <p>
 
@@ -133,6 +161,8 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
 </p>
 </details>
+
+&nbsp;
 
 <details><summary>Slave Agent Configuration 2</summary>
 <p>
