@@ -64,7 +64,7 @@ This may also be found at: /var/jenkins_home/secrets/initialAdminPassword
 
 &nbsp;
 
-***Install Suggested Plugins***
+***Now install the Suggested Plugins***
 
 &nbsp;
 
