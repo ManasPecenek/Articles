@@ -1,10 +1,10 @@
 
 
 In order to create an Azure Devops Agent that runs on a Kubernetes Cluster, follow the steps below:
+&nbsp;
+# 1) Create a PAT and then an Agent Pool in Azure Devops
 
-### 1) Create a PAT and then an Agent Pool in Azure Devops
-
-* Sign in to your organization (https://dev.azure.com/{yourorganization}). And go to Personal Access Tokens section.
+***Sign in to your organization (https://dev.azure.com/{yourorganization}). And go to Personal Access Tokens section***
 
 <details><summary>See the Screenshot</summary>
 <p>
@@ -14,7 +14,9 @@ In order to create an Azure Devops Agent that runs on a Kubernetes Cluster, foll
 </p>
 </details>
 
-* Click on “New Token”
+&nbsp;
+
+***Click on “New Token”***
 
 <details><summary>See the Screenshot</summary>
 <p>
@@ -24,7 +26,9 @@ In order to create an Azure Devops Agent that runs on a Kubernetes Cluster, foll
 </p>
 </details>
 
-* Give the necessary permissions. Save the token.
+&nbsp;
+
+***Give the necessary permissions. Save the token***
 
 <details><summary>See the Screenshot</summary>
 <p>
@@ -34,7 +38,9 @@ In order to create an Azure Devops Agent that runs on a Kubernetes Cluster, foll
 </p>
 </details>
 
-* Go to "Agent Pools". Create an Agent Pool by clicking on “Add Pool”
+&nbsp;
+
+***Go to "Agent Pools". Create an Agent Pool by clicking on “Add Pool”***
 
 <details><summary>See the Screenshot</summary>
 <p>
@@ -44,13 +50,17 @@ In order to create an Azure Devops Agent that runs on a Kubernetes Cluster, foll
 </p>
 </details>
 
-### 2) Build the image
+&nbsp;
+
+# 2) Build the image
 
 ````
 docker build -t docker-agent:v1.0 -f Docker-Agent.Dockerfile .
 ````
 
-### 3) Create the deployment
+&nbsp;
+
+# 3) Create the deployment
 
 ````
 kubectl apply -f Docker-Agent-Deployment.yaml
