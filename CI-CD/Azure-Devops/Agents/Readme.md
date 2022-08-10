@@ -44,16 +44,8 @@ In order to create an Azure Devops Agent that runs on a Kubernetes Cluster, foll
    </details>
 
 
-
-<pre> 
-
-
-
-
-</pre>
-
-
-
+&emsp;
+&emsp;
 
 # 2) Build the image
 
