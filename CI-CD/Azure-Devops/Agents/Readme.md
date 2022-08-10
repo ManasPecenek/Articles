@@ -2,17 +2,17 @@
 
 In order to create an Azure Devops Agent that runs on a Kubernetes Cluster, follow the steps below:
 
-## 1) Create a PAT and then an Agent Pool in Azure Devops
+# 1) Create a PAT and then an Agent Pool in Azure Devops
 
 ### Sign in to your organization (https://dev.azure.com/{yourorganization}). And go to Personal Access Tokens section.
 
-<details><summary>See the Screenshot</summary>
-<p>
+    <details><summary>See the Screenshot</summary>
+    <p>
 
-![1_Ly5V2WYCUEmhvy9FqB9vSw](https://user-images.githubusercontent.com/61777390/181875441-4bb0d72b-377d-4bd3-8d51-e36ce6df68df.png)
+    ![1_Ly5V2WYCUEmhvy9FqB9vSw](https://user-images.githubusercontent.com/61777390/181875441-4bb0d72b-377d-4bd3-8d51-e36ce6df68df.png)
 
-</p>
-</details>
+    </p>
+    </details>
 
 * Click on “New Token”
 
